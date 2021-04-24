@@ -90,12 +90,12 @@ def api_retrieve(movie_id) -> str:
     return resp
 
 
-@app.route('/api/v1/movies/', methods=['POST'])
+@app.route('/api/v1/movies/<int:movie_id>', methods=['POST'])
 def api_add() -> str:
     content = request.json
 
     cursor = mysql.get_db().cursor()
-    inputData = (content['Year'], content['Score'], content['Title'])
+    inputData = (content['Year'], content['Score'], content['Title'], movie_id)
     sql_insert_query = """INSERT INTO movies (Year, Score, Title) VALUES (%s, %s,%s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
