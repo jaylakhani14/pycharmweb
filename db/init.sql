@@ -96,4 +96,5 @@ INSERT INTO movies (Year,Score,Title) VALUES
     (2015,60,' "Joy"'),
     (2015,26,' "Heist"'),
     (2015,61,' "The Intern"'),
-    (2016,11,' "Dirty Grandpa"');
+    (2016,11,' "Dirty Grandpa"'),
+    (2018,86,' "Holi"');
